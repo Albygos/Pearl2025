@@ -1,0 +1,76 @@
+{
+  "placeholderImages": [
+    {
+      "id": "img1",
+      "description": "Colorful abstract painting",
+      "imageUrl": "https://images.unsplash.com/photo-1531489956451-20957fab52f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMHBhaW50aW5nfGVufDB8fHx8MTc1OTE0ODQ3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract painting"
+    },
+    {
+      "id": "img2",
+      "description": "A marble statue",
+      "imageUrl": "https://images.unsplash.com/photo-1662808141421-54240cbfd45f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYXJibGUlMjBzdGF0dWV8ZW58MHx8fHwxNzU5MTUzOTA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marble statue"
+    },
+    {
+      "id": "img3",
+      "description": "Graffiti on a brick wall",
+      "imageUrl": "https://images.unsplash.com/photo-1517776832751-0a7e6993de03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdHJlZXQlMjBhcnR8ZW58MHx8fHwxNzU5MTMxMDEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "street art"
+    },
+    {
+      "id": "img4",
+      "description": "A digital art piece on a large screen",
+      "imageUrl": "https://images.unsplash.com/photo-1593073862407-a3ce22748763?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaWdpdGFsJTIwYXJ0fGVufDB8fHx8MTc1OTE0NDIyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital art"
+    },
+    {
+      "id": "img5",
+      "description": "A person weaving a colorful tapestry",
+      "imageUrl": "https://images.unsplash.com/photo-1661069387934-ecd66304ef85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3ZWF2aW5nJTIwdGFwZXN0cnl8ZW58MHx8fHwxNzU5MTUzOTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "weaving tapestry"
+    },
+    {
+      "id": "img6",
+      "description": "Close-up of a kinetic sculpture",
+      "imageUrl": "https://images.unsplash.com/photo-1684254815885-be8700b42feb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxraW5ldGljJTIwc2N1bHB0dXJlfGVufDB8fHx8MTc1OTE1MzkwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kinetic sculpture"
+    },
+    {
+      "id": "img7",
+      "description": "An artist painting on a large canvas",
+      "imageUrl": "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YXJ0aXN0JTIwcGFpbnRpbmd8ZW58MHx8fHwxNzU5MDM0NDkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "artist painting"
+    },
+    {
+      "id": "img8",
+      "description": "Detailed shot of a woven fabric",
+      "imageUrl": "https://images.unsplash.com/photo-1575052823962-bb6ff6f87120?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b3ZlbiUyMGZhYnJpY3xlbnwwfHx8fDE3NTkxMzAzNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woven fabric"
+    },
+    {
+      "id": "img9",
+      "description": "Another angle of the marble statue",
+      "imageUrl": "https://images.unsplash.com/photo-1559992903-48e443283281?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdGF0dWUlMjBkZXRhaWx8ZW58MHx8fHwxNzU5MTUzOTA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "statue detail"
+    },
+    {
+      "id": "img10",
+      "description": "Abstract digital creation",
+      "imageUrl": "https://images.unsplash.com/photo-1633098096956-afdc8bcc8552?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRpZ2l0YWx8ZW58MHx8fHwxNzU5MDMxNDg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract digital"
+    },
+    {
+      "id": "img11",
+      "description": "Crowd watching a street artist",
+      "imageUrl": "https://images.unsplash.com/photo-1718634497099-ab5300a2669b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcm93ZCUyMHdhdGNoaW5nfGVufDB8fHx8MTc1OTE1MzkwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crowd watching"
+    },
+    {
+      "id": "img12",
+      "description": "Colorful light installation",
+      "imageUrl": "https://images.unsplash.com/photo-1533144169699-97ec15a75e92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsaWdodCUyMGluc3RhbGxhdGlvbnxlbnwwfHx8fDE3NTkxNTM5MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "light installation"
+    }
+  ]
+}
