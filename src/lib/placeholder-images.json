@@ -1,0 +1,76 @@
+{
+  "placeholderImages": [
+    {
+      "id": "img1",
+      "description": "Colorful abstract painting",
+      "imageUrl": "https://picsum.photos/seed/1/600/400",
+      "imageHint": "abstract painting"
+    },
+    {
+      "id": "img2",
+      "description": "A marble statue",
+      "imageUrl": "https://picsum.photos/seed/2/600/400",
+      "imageHint": "marble statue"
+    },
+    {
+      "id": "img3",
+      "description": "Graffiti on a brick wall",
+      "imageUrl": "https://picsum.photos/seed/3/600/400",
+      "imageHint": "street art"
+    },
+    {
+      "id": "img4",
+      "description": "A digital art piece on a large screen",
+      "imageUrl": "https://picsum.photos/seed/4/600/400",
+      "imageHint": "digital art"
+    },
+    {
+      "id": "img5",
+      "description": "A person weaving a colorful tapestry",
+      "imageUrl": "https://picsum.photos/seed/5/600/400",
+      "imageHint": "weaving tapestry"
+    },
+    {
+      "id": "img6",
+      "description": "Close-up of a kinetic sculpture",
+      "imageUrl": "https://picsum.photos/seed/6/600/400",
+      "imageHint": "kinetic sculpture"
+    },
+    {
+      "id": "img7",
+      "description": "An artist painting on a large canvas",
+      "imageUrl": "https://picsum.photos/seed/7/600/400",
+      "imageHint": "artist painting"
+    },
+    {
+      "id": "img8",
+      "description": "Detailed shot of a woven fabric",
+      "imageUrl": "https://picsum.photos/seed/8/600/400",
+      "imageHint": "woven fabric"
+    },
+    {
+      "id": "img9",
+      "description": "Another angle of the marble statue",
+      "imageUrl": "https://picsum.photos/seed/9/600/400",
+      "imageHint": "statue detail"
+    },
+    {
+      "id": "img10",
+      "description": "Abstract digital creation",
+      "imageUrl": "https://picsum.photos/seed/10/600/400",
+      "imageHint": "abstract digital"
+    },
+    {
+      "id": "img11",
+      "description": "Crowd watching a street artist",
+      "imageUrl": "https://picsum.photos/seed/11/600/400",
+      "imageHint": "crowd watching"
+    },
+    {
+      "id": "img12",
+      "description": "Colorful light installation",
+      "imageUrl": "https://picsum.photos/seed/12/600/400",
+      "imageHint": "light installation"
+    }
+  ]
+}
