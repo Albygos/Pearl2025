@@ -30,7 +30,7 @@ const calculateRank = (allUnits: Unit[], unitId: string) => {
         if (currentScore === 0) continue;
 
         if (currentScore !== lastScore) {
-            rank++;
+            rank = i + 1;
             lastScore = currentScore;
         }
         
@@ -164,7 +164,7 @@ export default function DashboardPage() {
                 {rank ? `#${rank}` : '-'}
               </div>
               <p className="text-xs text-muted-foreground">
-                Based on total score across all megalas
+                Based on total score across all meghalas
               </p>
             </CardContent>
           </Card>

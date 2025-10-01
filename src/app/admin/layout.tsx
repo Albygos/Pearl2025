@@ -10,9 +10,9 @@ export default function AdminLayout({
 }) {
   const pathname = usePathname();
 
-  // The announcement page uses a different layout, but still needs the auth guard.
+  // The announcement page is now handled by the auth guard inside its own file.
   if (pathname === '/admin/announcement') {
-    return <AdminAuthGuard>{children}</AdminAuthGuard>;
+    return <>{children}</>;
   }
 
   return (

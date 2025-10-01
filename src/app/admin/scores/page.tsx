@@ -142,7 +142,7 @@ export default function ManageScoresPage() {
 
     const unitsToDownload = [...units].sort((a,b) => getTotalScore(b) - getTotalScore(a));
 
-    const headers = ['Rank', 'Megala', ...events.map(e => e.name), 'Total Score'];
+    const headers = ['Rank', 'Meghala', ...events.map(e => e.name), 'Total Score'];
     
     const rows = unitsToDownload.map((unit, index) => {
       const rank = index + 1;
@@ -170,13 +170,13 @@ export default function ManageScoresPage() {
       <header className="mb-8 flex flex-col sm:flex-row justify-between sm:items-start gap-4">
         <div>
             <h1 className="text-3xl md:text-4xl font-headline font-bold">Manage Scores</h1>
-            <p className="text-muted-foreground">Update scores for participating megalas across all events.</p>
+            <p className="text-muted-foreground">Update scores for participating meghalas across all events.</p>
         </div>
         <div className="flex items-center gap-2 w-full sm:w-auto flex-wrap justify-end">
             <div className="relative w-full sm:max-w-xs">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
-                    placeholder="Search megalas..."
+                    placeholder="Search meghalas..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="pl-10"
@@ -201,7 +201,7 @@ export default function ManageScoresPage() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Megala</TableHead>
+                  <TableHead>Meghala</TableHead>
                   {events.map(event => (
                       <TableHead key={event.id} className="text-center">{event.name}</TableHead>
                   ))}
@@ -225,7 +225,7 @@ export default function ManageScoresPage() {
                  {filteredUnits.length === 0 && (
                     <TableRow>
                         <TableCell colSpan={events.length + 2} className="text-center text-muted-foreground py-8">
-                           No megalas found matching "{searchTerm}".
+                           No meghalas found matching "{searchTerm}".
                         </TableCell>
                     </TableRow>
                   )}

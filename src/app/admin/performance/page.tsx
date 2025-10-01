@@ -38,15 +38,15 @@ export default function PerformancePage() {
     <div className="p-4 sm:p-6 lg:p-8">
       <header className="mb-8 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl md:text-4xl font-headline font-bold">Megala Performance</h1>
+          <h1 className="text-3xl md:text-4xl font-headline font-bold">Meghala Performance</h1>
           <p className="text-muted-foreground">
-            View performance metrics for each megala.
+            View performance metrics for each meghala.
           </p>
         </div>
         <div className="relative w-full sm:max-w-xs">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
-                placeholder="Search megalas..."
+                placeholder="Search meghalas..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10"
@@ -98,7 +98,7 @@ export default function PerformancePage() {
         ))}
          {filteredUnits.length === 0 && (
             <div className="md:col-span-2 xl:col-span-3 text-center text-muted-foreground py-16">
-              No megalas found matching "{searchTerm}".
+              No meghalas found matching "{searchTerm}".
             </div>
         )}
       </div>

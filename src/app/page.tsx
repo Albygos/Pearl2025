@@ -104,13 +104,13 @@ export default function Home() {
   const rankedUnits = useMemo(() => {
     let rank = 0;
     let lastScore = -1;
-    return sortedUnits.map((unit) => {
+    return sortedUnits.map((unit, index) => {
       const score = getTotalScore(unit);
       if (score === 0) {
         return { ...unit, rank: null };
       }
       if (score !== lastScore) {
-        rank++;
+        rank = index + 1;
       }
       lastScore = score;
       return { ...unit, rank };
@@ -146,7 +146,7 @@ export default function Home() {
                  <div className="relative w-full sm:max-w-xs">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     <Input
-                        placeholder="Search megalas..."
+                        placeholder="Search meghalas..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="pl-10 bg-background/50 focus:ring-accent"
@@ -167,7 +167,7 @@ export default function Home() {
                   <TableHeader>
                     <TableRow className="hover:bg-transparent text-xs uppercase tracking-wider">
                       <TableHead className="w-16 text-center font-bold text-foreground px-2 sm:px-4">Rank</TableHead>
-                      <TableHead className="font-bold text-foreground min-w-[120px] px-2 sm:px-4">Megala</TableHead>
+                      <TableHead className="font-bold text-foreground min-w-[120px] px-2 sm:px-4">Meghala</TableHead>
                       {events.map(event => (
                         <TableHead key={event.id} className="text-center font-bold text-foreground px-2 sm:px-4">{event.name}</TableHead>
                       ))}
@@ -195,7 +195,7 @@ export default function Home() {
                     {filteredUnits.length === 0 && !loading && (
                          <TableRow>
                             <TableCell colSpan={events.length + 3} className="text-center py-16 text-muted-foreground">
-                                <p>No megalas found matching "{searchTerm}".</p>
+                                <p>No meghalas found matching "{searchTerm}".</p>
                             </TableCell>
                         </TableRow>
                     )}
@@ -215,7 +215,7 @@ export default function Home() {
 
         {filteredUnits.length > 0 && (
           <section className="max-w-6xl mx-auto mt-12 animate-in" style={{ animationDelay: '500ms', animationFillMode: 'backwards' }}>
-            <h2 className="text-3xl font-headline font-bold text-center mb-8">Top Megalas</h2>
+            <h2 className="text-3xl font-headline font-bold text-center mb-8">Top Meghalas</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {filteredUnits.slice(0, 3).map((unit) => (
                 <Card key={unit.id} className="shadow-md hover:shadow-lg transition-shadow">

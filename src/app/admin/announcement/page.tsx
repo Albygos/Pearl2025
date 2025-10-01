@@ -9,6 +9,7 @@ import type { Unit } from '@/lib/types';
 import { database } from '@/lib/firebase';
 import { ref, onValue } from 'firebase/database';
 import { Skeleton } from '@/components/ui/skeleton';
+import AdminAuthGuard from '@/components/admin-auth-guard';
 
 const getTotalScore = (unit: Unit) => {
   if (!unit.events) return 0;
@@ -47,10 +48,10 @@ export default function AnnouncementPage() {
   
     let rank = 0;
     let lastScore = -1;
-    return sortedUnits.map((unit) => {
+    return sortedUnits.map((unit, index) => {
       const score = getTotalScore(unit);
       if (score !== lastScore) {
-        rank++;
+        rank = index + 1;
         lastScore = score;
       }
       return { ...unit, rank };
@@ -89,7 +90,8 @@ export default function AnnouncementPage() {
             <Skeleton className="w-96 h-64 bg-gray-200" />
             <div className="flex gap-4 mt-4">
                  <Skeleton className="w-24 h-10 bg-gray-200" />
-                 <Skeleton className="w-24 h-10 bg-gray-200" />
+                 <Skeleton className="w-24 h-10 bg-gray
+-200" />
             </div>
         </div>
     </div>;
@@ -98,6 +100,7 @@ export default function AnnouncementPage() {
   const currentUnit = rankedUnits[currentUnitIndex];
 
   return (
+    <AdminAuthGuard>
     <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden p-4 bg-white text-gray-800">
         <div className="warm-gradient-background"></div>
       {!isStarted ? (
@@ -149,7 +152,7 @@ export default function AnnouncementPage() {
         </div>
       
         {rankedUnits.length === 0 && !loading && (
-            <div className="text-center text-xl text-gray-500 z-10">No scored megalas to display.</div>
+            <div className="text-center text-xl text-gray-500 z-10">No scored meghalas to display.</div>
         )}
 
         <div className="absolute bottom-10 flex items-center gap-6 z-10">
@@ -166,5 +169,7 @@ export default function AnnouncementPage() {
        </>
       )}
     </div>
+    </AdminAuthGuard>
   );
 }
+

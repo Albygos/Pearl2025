@@ -102,7 +102,7 @@ export default function ManageUnitsPage() {
           setUnits([...units, addedUnit]);
         }
         toast({
-          title: 'Megala Added',
+          title: 'Meghala Added',
           description: `"${newUnitName}" has been added to the event.`,
         });
         setIsAddDialogOpen(false);
@@ -110,8 +110,8 @@ export default function ManageUnitsPage() {
         setNewUnitCredentialId('');
       } catch (error) {
         toast({
-            title: 'Error Adding Megala',
-            description: `There was a problem saving the new megala.`,
+            title: 'Error Adding Meghala',
+            description: `There was a problem saving the new meghala.`,
             variant: 'destructive'
         });
       }
@@ -150,15 +150,15 @@ export default function ManageUnitsPage() {
       await updateUnit(editingUnit.id, updatedData);
       setUnits(units.map(u => u.id === editingUnit.id ? { ...u, ...updatedData } : u));
       toast({
-        title: 'Megala Updated',
-        description: 'The megala details have been successfully updated.',
+        title: 'Meghala Updated',
+        description: 'The meghala details have been successfully updated.',
       });
       setIsEditDialogOpen(false);
       setEditingUnit(null);
     } catch (error) {
       toast({
-        title: 'Error Updating Megala',
-        description: 'There was a problem updating the megala.',
+        title: 'Error Updating Meghala',
+        description: 'There was a problem updating the meghala.',
         variant: 'destructive'
       });
     }
@@ -169,20 +169,20 @@ export default function ManageUnitsPage() {
       await deleteUnit(unitId);
       setUnits(units.filter(u => u.id !== unitId));
       toast({
-        title: 'Megala Deleted',
-        description: 'The megala has been successfully removed.',
+        title: 'Meghala Deleted',
+        description: 'The meghala has been successfully removed.',
       });
     } catch (error) {
       toast({
-        title: 'Error Deleting Megala',
-        description: 'There was a problem deleting the megala.',
+        title: 'Error Deleting Meghala',
+        description: 'There was a problem deleting the meghala.',
         variant: 'destructive'
       });
     }
   };
 
   const handleDownloadUnitCredentials = () => {
-    const headers = ['Megala', 'Credential ID'];
+    const headers = ['Meghala', 'Credential ID'];
     const rows = units.map(unit => `"${unit.name}","${unit.credentialId}"`);
     
     let csvContent = "data:text/csv;charset=utf-8,";
@@ -192,7 +192,7 @@ export default function ManageUnitsPage() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "megala_credentials.csv");
+    link.setAttribute("download", "meghala_credentials.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -221,14 +221,14 @@ export default function ManageUnitsPage() {
     <div className="p-4 sm:p-6 lg:p-8">
       <header className="flex flex-col sm:flex-row justify-between sm:items-start mb-8 gap-4">
         <div>
-          <h1 className="text-3xl md:text-4xl font-headline font-bold">Manage Megalas</h1>
-          <p className="text-muted-foreground">Add, edit, or delete participating megalas.</p>
+          <h1 className="text-3xl md:text-4xl font-headline font-bold">Manage Meghalas</h1>
+          <p className="text-muted-foreground">Add, edit, or delete participating meghalas.</p>
         </div>
         <div className="flex items-center gap-2 w-full sm:w-auto flex-wrap justify-end">
             <div className="relative w-full sm:max-w-xs">
                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
-                    placeholder="Search megalas..."
+                    placeholder="Search meghalas..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="pl-10"
@@ -242,19 +242,19 @@ export default function ManageUnitsPage() {
                 <DialogTrigger asChild>
                     <Button className="flex-shrink-0">
                         <Plus className="mr-2 h-4 w-4" />
-                        Add Megala
+                        Add Meghala
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                        <DialogTitle>Add New Megala</DialogTitle>
+                        <DialogTitle>Add New Meghala</DialogTitle>
                         <DialogDescription>
-                            Fill in the details for the new megala. It will be initialized with 0 points for all events.
+                            Fill in the details for the new meghala. It will be initialized with 0 points for all events.
                         </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
                          <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="name" className="text-right">Megala Name</Label>
+                            <Label htmlFor="name" className="text-right">Meghala Name</Label>
                             <Input id="name" value={newUnitName} onChange={(e) => setNewUnitName(e.target.value)} className="col-span-3" placeholder="Creative name"/>
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
@@ -267,7 +267,7 @@ export default function ManageUnitsPage() {
                     </div>
                     <DialogFooter>
                         <Button variant="outline" onClick={() => setIsAddDialogOpen(false)}>Cancel</Button>
-                        <Button type="submit" onClick={handleAddUnit}>Add Megala</Button>
+                        <Button type="submit" onClick={handleAddUnit}>Add Meghala</Button>
                     </DialogFooter>
                 </DialogContent>
             </Dialog>
@@ -286,7 +286,7 @@ export default function ManageUnitsPage() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Megala</TableHead>
+                    <TableHead>Meghala</TableHead>
                     <TableHead className="hidden sm:table-cell">Credential ID</TableHead>
                     <TableHead className="text-right">Total Score</TableHead>
                     <TableHead className="text-right">Actions</TableHead>
@@ -316,7 +316,7 @@ export default function ManageUnitsPage() {
                                 <AlertDialogHeader>
                                 <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                                 <AlertDialogDescription>
-                                    This action cannot be undone. This will permanently delete the megala "{unit.name}".
+                                    This action cannot be undone. This will permanently delete the meghala "{unit.name}".
                                 </AlertDialogDescription>
                                 </AlertDialogHeader>
                                 <AlertDialogFooter>
@@ -332,7 +332,7 @@ export default function ManageUnitsPage() {
                   {filteredUnits.length === 0 && (
                     <TableRow>
                         <TableCell colSpan={5} className="text-center text-muted-foreground py-8">
-                           No megalas found matching "{searchTerm}".
+                           No meghalas found matching "{searchTerm}".
                         </TableCell>
                     </TableRow>
                   )}
@@ -343,18 +343,18 @@ export default function ManageUnitsPage() {
         </CardContent>
       </Card>
       
-      {/* Edit Megala Dialog */}
+      {/* Edit Meghala Dialog */}
       <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
         <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
-                <DialogTitle>Edit Megala</DialogTitle>
+                <DialogTitle>Edit Meghala</DialogTitle>
                 <DialogDescription>
                     Update the details for "{editingUnit?.name}".
                 </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="edit-name" className="text-right">Megala Name</Label>
+                    <Label htmlFor="edit-name" className="text-right">Meghala Name</Label>
                     <Input id="edit-name" value={editingUnitName} onChange={(e) => setEditingUnitName(e.target.value)} className="col-span-3"/>
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
