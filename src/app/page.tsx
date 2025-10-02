@@ -146,7 +146,7 @@ export default function Home() {
                  <div className="relative w-full sm:max-w-xs">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     <Input
-                        placeholder="Search meghalas..."
+                        placeholder="Search Meghalas..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="pl-10 bg-background/50 focus:ring-accent"
@@ -163,15 +163,15 @@ export default function Home() {
                         <Skeleton className="h-14 w-full" />
                     </div>
                 ) : (
-                <Table>
+                <Table className="[&_td]:text-xs [&_th]:text-xs lg:[&_td]:text-sm lg:[&_th]:text-sm">
                   <TableHeader>
-                    <TableRow className="hover:bg-transparent text-xs uppercase tracking-wider">
-                      <TableHead className="w-16 text-center font-bold text-foreground px-2 sm:px-4">Rank</TableHead>
-                      <TableHead className="font-bold text-foreground min-w-[120px] px-2 sm:px-4">Meghala</TableHead>
+                    <TableRow className="hover:bg-transparent tracking-wider">
+                      <TableHead className="w-16 text-center font-bold text-foreground px-2">Rank</TableHead>
+                      <TableHead className="font-bold text-foreground min-w-[120px] px-2">Meghala</TableHead>
                       {events.map(event => (
-                        <TableHead key={event.id} className="text-center font-bold text-foreground px-2 sm:px-4">{event.name}</TableHead>
+                        <TableHead key={event.id} className="text-center font-bold text-foreground px-2">{event.name}</TableHead>
                       ))}
-                      <TableHead className="text-right font-bold text-foreground px-2 sm:px-4">Total Score</TableHead>
+                      <TableHead className="text-right font-bold text-foreground px-2">Total Score</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -180,22 +180,22 @@ export default function Home() {
                         key={unit.id} 
                         className="font-medium animate-in"
                       >
-                        <TableCell className="font-bold text-center text-lg sm:text-xl text-primary px-2 sm:px-4">
+                        <TableCell className="font-bold text-center text-base sm:text-lg text-primary px-2">
                             {unit.rank ?? '-'}
                         </TableCell>
-                        <TableCell className="font-semibold text-sm sm:text-base px-2 sm:px-4">{unit.name}</TableCell>
+                        <TableCell className="font-semibold text-sm sm:text-base px-2">{unit.name}</TableCell>
                         {events.map(event => (
-                          <TableCell key={event.id} className={`text-center text-foreground font-bold transition-all duration-1000 px-2 sm:px-4 ${highlightedCells[`${unit.id}-${event.name}`] ? 'animate-flash' : ''}`}>
+                          <TableCell key={event.id} className={`text-center text-foreground font-bold transition-all duration-1000 px-2 ${highlightedCells[`${unit.id}-${event.name}`] ? 'animate-flash' : ''}`}>
                             {unit.events?.find(e => e.name === event.name)?.score ?? 0}
                           </TableCell>
                         ))}
-                        <TableCell className="text-right text-primary font-bold px-2 sm:px-4">{getTotalScore(unit)}</TableCell>
+                        <TableCell className="text-right text-primary font-bold px-2">{getTotalScore(unit)}</TableCell>
                       </TableRow>
                     ))}
                     {filteredUnits.length === 0 && !loading && (
                          <TableRow>
                             <TableCell colSpan={events.length + 3} className="text-center py-16 text-muted-foreground">
-                                <p>No meghalas found matching "{searchTerm}".</p>
+                                <p>No Meghalas found matching "{searchTerm}".</p>
                             </TableCell>
                         </TableRow>
                     )}
