@@ -165,7 +165,7 @@ export default function Home() {
                         <Skeleton className="h-14 w-full" />
                     </div>
                 ) : (
-                <Table className="[&_td]:px-2 [&_th]:px-2 sm:[&_td]:px-4 sm:[&_th]:px-4 lg:[&_td]:px-6 lg:[&_th]:px-6 [&_td]:py-3 [&_th]:py-3">
+                <Table className="[&_td]:px-2 [&_th]:px-2 sm:[&_td]:px-3 sm:[&_th]:px-3 lg:[&_td]:px-4 lg:[&_th]:px-4 [&_td]:py-3 [&_th]:py-3">
                   <TableHeader>
                     <TableRow className="hover:bg-transparent tracking-wider">
                       <TableHead className="w-20 text-center font-bold text-foreground text-xs lg:text-sm">Rank</TableHead>
