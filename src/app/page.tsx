@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState, useEffect, useMemo, useRef } from 'react';
@@ -163,15 +164,15 @@ export default function Home() {
                         <Skeleton className="h-14 w-full" />
                     </div>
                 ) : (
-                <Table className="[&_td]:text-xs [&_th]:text-xs lg:[&_td]:text-sm lg:[&_th]:text-sm">
+                <Table className="[&_td]:text-xs [&_th]:text-xs lg:[&_td]:text-xs lg:[&_th]:text-xs [&_td]:px-1 lg:[&_td]:px-2 [&_th]:px-1 lg:[&_th]:px-2">
                   <TableHeader>
                     <TableRow className="hover:bg-transparent tracking-wider">
-                      <TableHead className="w-16 text-center font-bold text-foreground px-2">Rank</TableHead>
-                      <TableHead className="font-bold text-foreground min-w-[120px] px-2">Meghala</TableHead>
+                      <TableHead className="w-16 text-center font-bold text-foreground">Rank</TableHead>
+                      <TableHead className="font-bold text-foreground min-w-[120px]">Meghala</TableHead>
                       {events.map(event => (
-                        <TableHead key={event.id} className="text-center font-bold text-foreground px-2">{event.name}</TableHead>
+                        <TableHead key={event.id} className="text-center font-bold text-foreground">{event.name}</TableHead>
                       ))}
-                      <TableHead className="text-right font-bold text-foreground px-2">Total Score</TableHead>
+                      <TableHead className="text-right font-bold text-foreground">Total Score</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -180,16 +181,16 @@ export default function Home() {
                         key={unit.id} 
                         className="font-medium animate-in"
                       >
-                        <TableCell className="font-bold text-center text-base sm:text-lg text-primary px-2">
+                        <TableCell className="font-bold text-center text-base sm:text-lg text-primary">
                             {unit.rank ?? '-'}
                         </TableCell>
-                        <TableCell className="font-semibold text-sm sm:text-base px-2">{unit.name}</TableCell>
+                        <TableCell className="font-semibold text-sm sm:text-base">{unit.name}</TableCell>
                         {events.map(event => (
-                          <TableCell key={event.id} className={`text-center text-foreground font-bold transition-all duration-1000 px-2 ${highlightedCells[`${unit.id}-${event.name}`] ? 'animate-flash' : ''}`}>
+                          <TableCell key={event.id} className={`text-center text-foreground font-bold transition-all duration-1000 ${highlightedCells[`${unit.id}-${event.name}`] ? 'animate-flash' : ''}`}>
                             {unit.events?.find(e => e.name === event.name)?.score ?? 0}
                           </TableCell>
                         ))}
-                        <TableCell className="text-right text-primary font-bold px-2">{getTotalScore(unit)}</TableCell>
+                        <TableCell className="text-right text-primary font-bold">{getTotalScore(unit)}</TableCell>
                       </TableRow>
                     ))}
                     {filteredUnits.length === 0 && !loading && (
