@@ -111,7 +111,7 @@ export default function Home() {
         return { ...unit, rank: null };
       }
       if (score !== lastScore) {
-        rank = index + 1;
+        rank = rank + (sortedUnits[index-1] && getTotalScore(sortedUnits[index-1]) === score ? 0 : 1);
         lastScore = score;
       }
       return { ...unit, rank };
@@ -139,8 +139,8 @@ export default function Home() {
       </div>
 
         <div className="w-full animate-in" style={{ animationDelay: '300ms', animationFillMode: 'backwards' }}>
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 border-y border-primary/10 overflow-hidden rounded-none">
-             <CardHeader className="text-center bg-muted/30 p-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between container mx-auto">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 border-y border-primary/10 overflow-hidden rounded-none sm:rounded-xl sm:mx-4">
+             <CardHeader className="text-center bg-muted/30 p-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between sm:container sm:mx-auto">
                 <div>
                     <CardTitle className="text-3xl font-headline">Live Scoreboard</CardTitle>
                     <CardDescription>Real-time results from all event categories</CardDescription>
@@ -165,13 +165,13 @@ export default function Home() {
                         <Skeleton className="h-14 w-full" />
                     </div>
                 ) : (
-                <Table className="[&_td]:px-2 [&_th]:px-2 sm:[&_td]:px-3 sm:[&_th]:px-3 lg:[&_td]:px-4 lg:[&_th]:px-4 [&_td]:py-3 [&_th]:py-3">
+                <Table className="[&_td]:py-3 [&_th]:py-3 [&_td]:px-2 [&_th]:px-2 lg:[&_td]:px-3 lg:[&_th]:px-3">
                   <TableHeader>
                     <TableRow className="hover:bg-transparent tracking-wider">
                       <TableHead className="w-20 text-center font-bold text-foreground text-xs lg:text-sm">Rank</TableHead>
-                      <TableHead className="font-bold text-foreground min-w-[200px] lg:min-w-[250px] text-xs lg:text-sm">Meghala</TableHead>
+                      <TableHead className="font-bold text-foreground text-xs lg:text-sm">Meghala</TableHead>
                       {events.map(event => (
-                        <TableHead key={event.id} className="text-center font-bold text-foreground text-xs lg:text-sm">{event.name}</TableHead>
+                        <TableHead key={event.id} className="text-center font-bold text-foreground text-xs lg:text-xs">{event.name}</TableHead>
                       ))}
                       <TableHead className="text-right font-bold text-foreground text-xs lg:text-sm w-28">Total Score</TableHead>
                     </TableRow>
