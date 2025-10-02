@@ -173,7 +173,7 @@ export default function Home() {
                       {events.map(event => (
                         <TableHead key={event.id} className="text-center font-bold text-foreground text-xs lg:text-xs">{event.name}</TableHead>
                       ))}
-                      <TableHead className="text-right font-bold text-foreground text-xs lg:text-sm w-28">Total Score</TableHead>
+                      <TableHead className="text-right font-bold text-foreground text-xs lg:text-sm w-28 sticky right-0 bg-background/80 backdrop-blur-sm shadow-sm">Total Score</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -191,7 +191,7 @@ export default function Home() {
                             {unit.events?.find(e => e.name === event.name)?.score ?? 0}
                           </TableCell>
                         ))}
-                        <TableCell className="text-right text-primary font-bold text-base sm:text-lg">{getTotalScore(unit)}</TableCell>
+                        <TableCell className="text-right text-primary font-bold text-base sm:text-lg sticky right-0 bg-background/80 backdrop-blur-sm">{getTotalScore(unit)}</TableCell>
                       </TableRow>
                     ))}
                     {filteredUnits.length === 0 && !loading && (
