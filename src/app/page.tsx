@@ -129,17 +129,18 @@ export default function Home() {
 
   return (
     <div className="bg-background min-h-screen">
-      <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <section className="text-center mb-12 animate-in" style={{ animationDelay: '100ms', animationFillMode: 'backwards' }}>
+      <div className="container mx-auto pt-12 pb-6 px-4 sm:px-6 lg:px-8">
+        <section className="text-center mb-8 animate-in" style={{ animationDelay: '100ms', animationFillMode: 'backwards' }}>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-headline font-extrabold mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-red-500 to-yellow-500">Pearl 2025</h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto animate-in" style={{ animationDelay: '200ms', animationFillMode: 'backwards' }}>
             Let Talent Speak.
           </p>
         </section>
+      </div>
 
-        <div className="lg:max-w-full mx-auto animate-in" style={{ animationDelay: '300ms', animationFillMode: 'backwards' }}>
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-primary/10 overflow-hidden rounded-xl">
-            <CardHeader className="text-center bg-muted/30 p-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+        <div className="w-full animate-in" style={{ animationDelay: '300ms', animationFillMode: 'backwards' }}>
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 border-y border-primary/10 overflow-hidden rounded-none">
+             <CardHeader className="text-center bg-muted/30 p-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between container mx-auto">
                 <div>
                     <CardTitle className="text-3xl font-headline">Live Scoreboard</CardTitle>
                     <CardDescription>Real-time results from all event categories</CardDescription>
@@ -157,22 +158,22 @@ export default function Home() {
             <CardContent className="p-0">
               <div className="overflow-x-auto">
                  {loading ? (
-                    <div className="space-y-1 p-4">
+                    <div className="space-y-1 p-4 container mx-auto">
                         <Skeleton className="h-14 w-full" />
                         <Skeleton className="h-14 w-full" />
                         <Skeleton className="h-14 w-full" />
                         <Skeleton className="h-14 w-full" />
                     </div>
                 ) : (
-                <Table className="[&_td]:px-2 [&_th]:px-2 lg:[&_td]:px-3 lg:[&_th]:px-3 [&_td]:py-3 [&_th]:py-3">
+                <Table className="[&_td]:px-2 [&_th]:px-2 sm:[&_td]:px-4 sm:[&_th]:px-4 lg:[&_td]:px-6 lg:[&_th]:px-6 [&_td]:py-3 [&_th]:py-3">
                   <TableHeader>
                     <TableRow className="hover:bg-transparent tracking-wider">
-                      <TableHead className="w-16 text-center font-bold text-foreground lg:text-sm">Rank</TableHead>
-                      <TableHead className="font-bold text-foreground min-w-[150px] lg:min-w-[200px] lg:text-sm">Meghala</TableHead>
+                      <TableHead className="w-20 text-center font-bold text-foreground text-xs lg:text-sm">Rank</TableHead>
+                      <TableHead className="font-bold text-foreground min-w-[200px] lg:min-w-[250px] text-xs lg:text-sm">Meghala</TableHead>
                       {events.map(event => (
-                        <TableHead key={event.id} className="text-center font-bold text-foreground lg:text-sm">{event.name}</TableHead>
+                        <TableHead key={event.id} className="text-center font-bold text-foreground text-xs lg:text-sm">{event.name}</TableHead>
                       ))}
-                      <TableHead className="text-right font-bold text-foreground lg:text-sm">Total Score</TableHead>
+                      <TableHead className="text-right font-bold text-foreground text-xs lg:text-sm w-28">Total Score</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -184,13 +185,13 @@ export default function Home() {
                         <TableCell className="font-bold text-center text-lg sm:text-xl text-primary">
                             {unit.rank ?? '-'}
                         </TableCell>
-                        <TableCell className="font-semibold text-base">{unit.name}</TableCell>
+                        <TableCell className="font-semibold text-sm sm:text-base">{unit.name}</TableCell>
                         {events.map(event => (
-                          <TableCell key={event.id} className={`text-center text-foreground font-bold transition-all duration-1000 lg:text-base ${highlightedCells[`${unit.id}-${event.name}`] ? 'animate-flash' : ''}`}>
+                          <TableCell key={event.id} className={`text-center text-foreground font-bold transition-all duration-1000 sm:text-base ${highlightedCells[`${unit.id}-${event.name}`] ? 'animate-flash' : ''}`}>
                             {unit.events?.find(e => e.name === event.name)?.score ?? 0}
                           </TableCell>
                         ))}
-                        <TableCell className="text-right text-primary font-bold text-base lg:text-lg">{getTotalScore(unit)}</TableCell>
+                        <TableCell className="text-right text-primary font-bold text-base sm:text-lg">{getTotalScore(unit)}</TableCell>
                       </TableRow>
                     ))}
                     {filteredUnits.length === 0 && !loading && (
@@ -204,7 +205,7 @@ export default function Home() {
                 </Table>
                 )}
                 {!loading && units.length === 0 && (
-                  <div className="text-center py-16 text-muted-foreground">
+                  <div className="text-center py-16 text-muted-foreground container mx-auto">
                     <p>The scoreboard is currently empty.</p>
                     <p>Check back soon for live updates!</p>
                   </div>
@@ -213,9 +214,9 @@ export default function Home() {
             </CardContent>
           </Card>
         </div>
-
+      <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
         {filteredUnits.length > 0 && (
-          <section className="max-w-6xl mx-auto mt-12 animate-in" style={{ animationDelay: '500ms', animationFillMode: 'backwards' }}>
+          <section className="max-w-6xl mx-auto animate-in" style={{ animationDelay: '500ms', animationFillMode: 'backwards' }}>
             <h2 className="text-3xl font-headline font-bold text-center mb-8">Top Meghalas</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {filteredUnits.slice(0, 3).map((unit) => (
