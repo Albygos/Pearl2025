@@ -112,8 +112,8 @@ export default function Home() {
       }
       if (score !== lastScore) {
         rank = index + 1;
+        lastScore = score;
       }
-      lastScore = score;
       return { ...unit, rank };
     });
   }, [sortedUnits]);
@@ -137,7 +137,7 @@ export default function Home() {
           </p>
         </section>
 
-        <div className="max-w-6xl mx-auto animate-in" style={{ animationDelay: '300ms', animationFillMode: 'backwards' }}>
+        <div className="lg:max-w-full mx-auto animate-in" style={{ animationDelay: '300ms', animationFillMode: 'backwards' }}>
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-primary/10 overflow-hidden rounded-xl">
             <CardHeader className="text-center bg-muted/30 p-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
                 <div>
@@ -164,15 +164,15 @@ export default function Home() {
                         <Skeleton className="h-14 w-full" />
                     </div>
                 ) : (
-                <Table className="[&_td]:text-xs [&_th]:text-xs lg:[&_td]:text-xs lg:[&_th]:text-xs [&_td]:px-1 lg:[&_td]:px-2 [&_th]:px-1 lg:[&_th]:px-2">
+                <Table className="[&_td]:px-2 [&_th]:px-2 lg:[&_td]:px-3 lg:[&_th]:px-3 [&_td]:py-3 [&_th]:py-3">
                   <TableHeader>
                     <TableRow className="hover:bg-transparent tracking-wider">
-                      <TableHead className="w-16 text-center font-bold text-foreground">Rank</TableHead>
-                      <TableHead className="font-bold text-foreground min-w-[120px]">Meghala</TableHead>
+                      <TableHead className="w-16 text-center font-bold text-foreground lg:text-sm">Rank</TableHead>
+                      <TableHead className="font-bold text-foreground min-w-[150px] lg:min-w-[200px] lg:text-sm">Meghala</TableHead>
                       {events.map(event => (
-                        <TableHead key={event.id} className="text-center font-bold text-foreground">{event.name}</TableHead>
+                        <TableHead key={event.id} className="text-center font-bold text-foreground lg:text-sm">{event.name}</TableHead>
                       ))}
-                      <TableHead className="text-right font-bold text-foreground">Total Score</TableHead>
+                      <TableHead className="text-right font-bold text-foreground lg:text-sm">Total Score</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -181,16 +181,16 @@ export default function Home() {
                         key={unit.id} 
                         className="font-medium animate-in"
                       >
-                        <TableCell className="font-bold text-center text-base sm:text-lg text-primary">
+                        <TableCell className="font-bold text-center text-lg sm:text-xl text-primary">
                             {unit.rank ?? '-'}
                         </TableCell>
-                        <TableCell className="font-semibold text-sm sm:text-base">{unit.name}</TableCell>
+                        <TableCell className="font-semibold text-base">{unit.name}</TableCell>
                         {events.map(event => (
-                          <TableCell key={event.id} className={`text-center text-foreground font-bold transition-all duration-1000 ${highlightedCells[`${unit.id}-${event.name}`] ? 'animate-flash' : ''}`}>
+                          <TableCell key={event.id} className={`text-center text-foreground font-bold transition-all duration-1000 lg:text-base ${highlightedCells[`${unit.id}-${event.name}`] ? 'animate-flash' : ''}`}>
                             {unit.events?.find(e => e.name === event.name)?.score ?? 0}
                           </TableCell>
                         ))}
-                        <TableCell className="text-right text-primary font-bold">{getTotalScore(unit)}</TableCell>
+                        <TableCell className="text-right text-primary font-bold text-base lg:text-lg">{getTotalScore(unit)}</TableCell>
                       </TableRow>
                     ))}
                     {filteredUnits.length === 0 && !loading && (
